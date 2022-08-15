@@ -1,3 +1,11 @@
 div{
     background-color: #F8BBD0;
 }
+app-logo-ap{
+    float: left;
+    margin-top: 25px;
+}
+app-red-social{
+    float: right;
+    margin-top:25px;
+}

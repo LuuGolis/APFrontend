@@ -1,0 +1,31 @@
+.row{
+    padding:20px;
+}
+div{
+    background-color: #F8BBD0;
+}
+/*etiqueta nombre*/
+#nombre{
+    font-weight: bold;
+    margin-top: 40%;
+    margin-left: 10px;
+}
+/*foto de perfil*/
+/*creación de media query para >576px y <576*/
+@media(min-width:576px){
+    #fotoperfil{
+        position: absolute;
+        width:15%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px rgb(250, 82, 110);
+    }
+}
+@media(max-width:576px){
+    #fotoperfil{
+        position: absolute;
+        width:15%;
+        border-radius: 100%;
+        box-shadow: 3px 3px 3px rgb(250, 82, 110);
+        left:33%;
+    }
+}

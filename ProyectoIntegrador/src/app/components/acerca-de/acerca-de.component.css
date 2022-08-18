@@ -13,6 +13,8 @@ div{
 /*foto de perfil*/
 /*creación de media query para >576px y <576*/
 @media(min-width:576px){
+    
+    /*creaciòn de etiqueta id=fotoperfil en el html */
     #fotoperfil{
         position: absolute;
         width:15%;

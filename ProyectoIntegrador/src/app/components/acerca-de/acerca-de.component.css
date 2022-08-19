@@ -3,6 +3,7 @@
 }
 div{
     background-color: #F8BBD0;
+    text-align: center;
 }
 /*etiqueta nombre*/
 #nombre{
@@ -20,6 +21,7 @@ div{
         width:15%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px rgb(250, 82, 110);
+       
     }
 }
 @media(max-width:576px){

@@ -10,7 +10,8 @@ import { RedSocialComponent } from './components/red-social/red-social.component
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { HyssComponent } from './components/hyss/hyss.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,11 +21,13 @@ import { EducacionComponent } from './components/educacion/educacion.component';
     RedSocialComponent,
     AcercaDeComponent,
     ExperienciaComponent,
-    EducacionComponent
+    EducacionComponent,
+    HyssComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]

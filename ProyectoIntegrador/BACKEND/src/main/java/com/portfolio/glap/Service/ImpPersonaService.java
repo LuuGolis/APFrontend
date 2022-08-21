@@ -10,11 +10,13 @@ import com.portfolio.glap.Interface.IPersonaService;
 import com.portfolio.glap.Repository.IPersonaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author lugol
  */
+@Service
 public class ImpPersonaService implements IPersonaService {
     
     @Autowired IPersonaRepository ipersonaRepository;

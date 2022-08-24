@@ -10,7 +10,7 @@ import { persona } from '../model/persona.model';
 export class PersonaService {
 URL = 'http://localhost:8090/personas/';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
     public getPersona(): Observable<persona>{
       
       return this.http.get<persona>(this.URL+'traer/perfil');

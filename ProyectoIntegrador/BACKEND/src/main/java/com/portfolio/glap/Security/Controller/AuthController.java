@@ -6,13 +6,14 @@
 package com.portfolio.glap.Security.Controller;
 
 import com.portfolio.glap.Security.Dto.JwtDto;
+import com.portfolio.glap.Security.Dto.LoginUsuario;
+import com.portfolio.glap.Security.Dto.NuevoUsuario;
 import com.portfolio.glap.Security.Entity.Rol;
 import com.portfolio.glap.Security.Entity.Usuario;
 import com.portfolio.glap.Security.Enums.RolNombre;
 import com.portfolio.glap.Security.Service.RolService;
 import com.portfolio.glap.Security.Service.UsuarioService;
 import com.portfolio.glap.Security.jwt.JwtProvider;
-//ojo con hashset capaz no va
 import java.util.HashSet;
 import java.util.Set;
 import javax.validation.Valid;
@@ -60,10 +61,10 @@ public class AuthController {
         if(bindingResult.hasErrors())
             return new ResponseEntity(new Mensaje("Email inválido / Error en los campos"), HttpStatus.BAD_REQUEST);
 
-        if(usuarioService.existsByNombreUusario(nombreUsuario.getNombreUsuario()))
+        if(usuarioService.existsByNombreUusario(nuevoUsuario.getNombreUsuario()))
             return new ResponseEntity(new Mensaje("Nombre de usuario ya existente, por favor elija otro"), HttpStatus.BAD_REQUEST);
         
-        if(usuarioService.existsByEmail(nombreUsuario.getEmail()))
+        if(usuarioService.existsByEmail(nuevoUsuario.getEmail()))
             return new ResponseEntity(new Mensaje("Email ya existente, por favor ingrese un email válido"), HttpStatus.BAD_REQUEST);
     
     Usuario usuario = new Usuario(nuevoUsuario.getNombre(), nuevoUsuario.getNombreUsuario(), nuevoUsuario.getEmail(), passwordEncoder.encode(nuevoUsuario.getPassword()));
@@ -96,10 +97,6 @@ public class AuthController {
         JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities()); 
         
         
-        return new ResponseEntity(jwtDto, HttpStatus.OK);
-        
+        return new ResponseEntity(jwtDto, HttpStatus.OK);     
     }
-    
-    
-    
 }

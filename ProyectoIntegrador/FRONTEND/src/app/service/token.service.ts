@@ -47,7 +47,7 @@ export class TokenService {
       
     });
    }
-   return.this.roles;
+   return this.roles;
   }
 
   public logOut(): void{

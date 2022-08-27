@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       this.isLoginFail = false;
       this.tokenService.setToken(data.token);
       this.tokenService.setUsername(data.nombreUsuario);
-      this.tokenService.setAuthorities(data.authorities); //chequear este error -.-
+      this.tokenService.setAuthorities(data.authorities); 
       this.roles = data.authorities;
       this.router.navigate(['']);
     }, err => {

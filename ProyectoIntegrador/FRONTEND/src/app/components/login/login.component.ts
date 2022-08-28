@@ -29,20 +29,20 @@ export class LoginComponent implements OnInit {
   }
   onLogin(): void{
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
-     this.authService.login(this.loginUsuario).subscribe(data => {
+     this.authService.login(this.loginUsuario).subscribe(data =>{
       this.isLogged = true;
       this.isLoginFail = false;
       this.tokenService.setToken(data.token);
       this.tokenService.setUsername(data.nombreUsuario);
       this.tokenService.setAuthorities(data.authorities); 
       this.roles = data.authorities;
-      this.router.navigate(['']);
+      this.router.navigate([''])
     }, err => {
       this.isLogged = false;
       this.isLoginFail = true;
       this.errorMsg = err.error.mensaje;
       console.log(this.errorMsg);
-    }))
+    })
   }
 
 }

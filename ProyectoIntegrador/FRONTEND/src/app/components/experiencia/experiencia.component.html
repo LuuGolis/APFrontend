@@ -1,29 +1,23 @@
 
 <div class="row">
     <h1>Experiencia laboral</h1>
-   
+    <div class="col-lg-2">
+        <button type="button"></button>
+    </div>
+    <!-- Falta hacer para med y small -->
     <div class="col-lg-1"></div>
     <div class="col-lg-11">
-        <ul>
-            <li>
-                <h1>Trabajo 1</h1><h3>Año-Año</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                     Aspernatur quaerat dolor deleniti nulla aliquid animi 
-                     rem corrupti autem neque quo odit, sequi libero, modi 
-                     blanditiis beatae iure in praesentium rerum!</p>
-            </li>
 
-        </ul>
-        <ul>
-            <li>
-                <h1>Trabajo 2</h1><h3>Año-Año</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                     Aspernatur quaerat dolor deleniti nulla aliquid animi 
-                     rem corrupti autem neque quo odit, sequi libero, modi 
-                     blanditiis beatae iure in praesentium rerum!</p>
-            </li>
-
-        </ul>
-    </div>
-
+         <table class="table">
+        <tbody>
+            <tr *ngFor="let Experiencia of expe">
+                <td>{{Experiencia.nombreE}}</td>
+                <td>{{Experiencia.descripcionE}}</td>
+                <td>Editar</td>
+                <td>Borrar</td>
+            </tr>
+        </tbody>
+       </table></div>
+  
+  
 </div>

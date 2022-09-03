@@ -18,6 +18,6 @@ import org.springframework.stereotype.Repository;
 //Llamamos a la entidad educacion + el tipo de datos de la id
 public interface REducacion extends JpaRepository<Educacion, Integer>{
     public Optional<Educacion> findByNombreE(String nombreE);
-    public boolean existsByNombre(String nombreE);
+    public boolean existsByNombreE(String nombreE);
     
 }

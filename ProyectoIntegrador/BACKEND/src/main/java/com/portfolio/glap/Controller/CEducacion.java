@@ -7,7 +7,7 @@ package com.portfolio.glap.Controller;
 
 import com.portfolio.glap.Entity.Educacion;
 import com.portfolio.glap.Security.Controller.Mensaje;
-import com.portfolio.glap.Security.Dto.dtoEducacion;
+import com.portfolio.glap.Dto.dtoEducacion;
 import com.portfolio.glap.Service.Seducacion;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;

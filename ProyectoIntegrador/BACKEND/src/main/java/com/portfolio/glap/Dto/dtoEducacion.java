@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.portfolio.glap.Security.Dto;
+package com.portfolio.glap.Dto;
 
 import javax.validation.constraints.NotBlank;
 
@@ -14,6 +14,7 @@ import javax.validation.constraints.NotBlank;
 public class dtoEducacion {
     @NotBlank
     private String nombreE;
+    @NotBlank
     private String descripcionE;
 
     public dtoEducacion() {
@@ -39,6 +40,7 @@ public class dtoEducacion {
     public void setDescripcionE(String descripcionE) {
         this.descripcionE = descripcionE;
     }
+    
     
     
 }

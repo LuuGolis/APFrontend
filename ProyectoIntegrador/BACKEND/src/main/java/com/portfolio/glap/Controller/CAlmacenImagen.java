@@ -30,7 +30,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
  */
 
 @Controller
-@CrossOrigin("http://localhost:8090")
+@CrossOrigin("http://localhost:4200")
 public class CAlmacenImagen {
     @Autowired
     private SAlmacenImagen sAlmacenImagen;

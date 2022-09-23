@@ -38,7 +38,13 @@ public class SAlmacenImagen {
         return rAlmacenImagen.findAll().stream();
     }
     
+    public void delete(String id){
+        rAlmacenImagen.deleteById(id);
+    }
     
+    public boolean existsById(String id){
+        return rAlmacenImagen.existsById(id);
+    }
     
     
 }

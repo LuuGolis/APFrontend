@@ -17,6 +17,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,7 +31,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
  */
 
 @Controller
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://localhost:8090")
 public class CAlmacenImagen {
     @Autowired
     private SAlmacenImagen sAlmacenImagen;
@@ -59,6 +60,7 @@ public class CAlmacenImagen {
         }).collect(Collectors.toList());
         return ResponseEntity.status(HttpStatus.OK).body(files);
     }
+    //descarga
     @GetMapping("/files/{id}")
     public ResponseEntity<byte[]> getFile(@PathVariable String id){
         AlmacenImagen almacenImagen =  sAlmacenImagen.getFile(id);
@@ -66,5 +68,14 @@ public class CAlmacenImagen {
                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + almacenImagen.getName() + "\"")
                 .body(almacenImagen.getData());
                        
+    }
+    
+    @DeleteMapping("/files/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") String id){
+        if(!sAlmacenImagen.existsById(id)){
+            return new ResponseEntity(new RptaMsg("No existe el ID indicado"), HttpStatus.NOT_FOUND);
+        }
+        sAlmacenImagen.delete(id);
+        return new ResponseEntity(new RptaMsg("Imagen eliminada correctamente"), HttpStatus.OK);
     }
 }

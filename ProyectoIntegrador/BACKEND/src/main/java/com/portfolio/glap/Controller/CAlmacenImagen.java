@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.portfolio.glap.Controller;
 
 import Mensaje.RptaImagen;
@@ -21,6 +16,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -32,9 +28,11 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @Controller
 @CrossOrigin("http://localhost:8090")
+@RequestMapping("/image")
 public class CAlmacenImagen {
     @Autowired
     private SAlmacenImagen sAlmacenImagen;
+    
     @PostMapping("/upload")
     public ResponseEntity<RptaMsg> uploadFile(@RequestParam("file") MultipartFile file){
         String msg = "";
@@ -69,7 +67,7 @@ public class CAlmacenImagen {
                 .body(almacenImagen.getData());
                        
     }
-    
+    /* no tengo id identity
     @DeleteMapping("/files/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") String id){
         if(!sAlmacenImagen.existsById(id)){
@@ -77,5 +75,5 @@ public class CAlmacenImagen {
         }
         sAlmacenImagen.delete(id);
         return new ResponseEntity(new RptaMsg("Imagen eliminada correctamente"), HttpStatus.OK);
-    }
+    }*/
 }

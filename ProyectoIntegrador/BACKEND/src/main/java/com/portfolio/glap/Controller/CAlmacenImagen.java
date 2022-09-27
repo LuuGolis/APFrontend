@@ -27,7 +27,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
  */
 
 @Controller
-@CrossOrigin("http://localhost:8090")
+@CrossOrigin("http://localhost:4200")
 @RequestMapping("/image")
 public class CAlmacenImagen {
     @Autowired

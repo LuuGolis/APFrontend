@@ -21,8 +21,9 @@ export class ImagenService {
     });
     return this.http.request(req);
   }
+  //Cambios el 30/9 codigo original en componentes/imagen
 
-  getFiles(): Observable<any>{
-    return this.http.get(`${this.URL}/files`);
+  getFiles(imageUrl: string): Observable<Blob>{
+    return this.http.get(imageUrl, {responseType: 'blob'});
   }
 }

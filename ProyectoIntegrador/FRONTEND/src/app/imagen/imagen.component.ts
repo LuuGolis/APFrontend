@@ -16,9 +16,19 @@ export class ImagenComponent implements OnInit {
   preview = '';
 
   imageInfos?: Observable<any>;
+  imageToShow: any;
 
   constructor(private imagenS: ImagenService) { }
 
+  createImagefromBlob(image: Blob){
+    let reader = new FileReader();
+    reader.addEventListener("load", () => {
+      this.imageToShow = reader.result;
+    }, false);
+    if (image){
+      reader.readAsDataURL(image);
+    }
+  }
   selectFile(event: any): void {
     this.message = '';
     this.preview = '';

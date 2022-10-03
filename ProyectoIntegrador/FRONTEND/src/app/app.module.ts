@@ -22,7 +22,14 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { NeweducacionComponent } from './components/educacion/neweducacion.component';
 import { EditeducacionComponent } from './components/educacion/editeducacion.component';
-import { ImagenComponent } from './imagen/imagen.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireStorageModule } from'@angular/fire/compat/storage';
+import { environment } from 'src/environments/environment';
+import { ImagenCComponent } from './components/imagen-c/imagen-c.component';
+import { ImagenDComponent } from './components/imagen-d/imagen-d.component';
+import { ImagenLComponent } from './components/imagen-l/imagen-l.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +50,10 @@ import { ImagenComponent } from './imagen/imagen.component';
     EditExperienciaComponent,
     NeweducacionComponent,
     EditeducacionComponent,
-    ImagenComponent
+    ImagenCComponent,
+    ImagenDComponent,
+    ImagenLComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -51,7 +61,11 @@ import { ImagenComponent } from './imagen/imagen.component';
     AppRoutingModule,
     FormsModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
+
   ],
   providers: [
     interceptorProvider

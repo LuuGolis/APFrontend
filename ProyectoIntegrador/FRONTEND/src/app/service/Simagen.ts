@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
-import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { AngularFireStorage, AngularFireStorageReference } from '@angular/fire/compat/storage';
 import { finalize, Observable } from "rxjs";
 import { Imagen } from "../model/imagen";
 
@@ -10,6 +10,7 @@ import { Imagen } from "../model/imagen";
 
 export class Simagen {
     private basePath = '/uploads';
+    
 
     constructor(private db: AngularFireDatabase, private storage: AngularFireStorage) { }
 
@@ -29,6 +30,8 @@ export class Simagen {
         ).subscribe();
         return uploadTask.percentageChanges();
     }
+ 
+    
 
     private saveFileData(imagen: Imagen): void {
         this.db.list(this.basePath).push(imagen);
@@ -37,6 +40,7 @@ export class Simagen {
     getFiles(numberItems: number): AngularFireList<Imagen> {
         return this.db.list(this.basePath, ref =>
             ref.limitToLast(numberItems));
+            
     }
 
     deleteFile(imagen: Imagen): void{
@@ -46,6 +50,7 @@ export class Simagen {
         }) 
         .catch(error => console.log(error));
     }
+    
     
     private deleteFileDatabase(key: string): Promise<void> {
         return this.db.list(this.basePath).remove(key);

@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
  * @author lugol
  */
 @Repository
-public interface IPersonaRepository extends JpaRepository<Persona,Long> {
+public interface IPersonaRepository extends JpaRepository<Persona,Integer> {
     
 }

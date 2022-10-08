@@ -25,7 +25,7 @@ public class Persona {
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY )
     
-    private Long id;
+    private Integer id;
     
     @NotNull
     @Size(min = 1, max = 50, message = "No cumple con la longitud" )

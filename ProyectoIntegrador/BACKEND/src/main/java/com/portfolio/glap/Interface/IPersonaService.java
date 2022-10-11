@@ -21,9 +21,9 @@ public interface IPersonaService {
 public void savePersona(Persona persona);
 
 //eliminar objeto según ID
-public void deletePersona(Long id);
+public void deletePersona(Integer id);
 
 //buscar objeto según id
-public Persona findPersona(Long id);
+public Persona findPersona(Integer id);
     
 }

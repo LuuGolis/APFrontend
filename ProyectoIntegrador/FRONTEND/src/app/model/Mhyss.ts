@@ -1,4 +1,4 @@
-export class Hyss {
+export class Mhyss {
     id: number;
     nombre: string;
     porcentaje: number;

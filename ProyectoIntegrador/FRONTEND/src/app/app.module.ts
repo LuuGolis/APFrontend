@@ -29,6 +29,8 @@ import { environment } from 'src/environments/environment';
 import { ImagenCComponent } from './components/imagen-c/imagen-c.component';
 import { ImagenDComponent } from './components/imagen-d/imagen-d.component';
 import { ImagenLComponent } from './components/imagen-l/imagen-l.component';
+import { EditHyssComponent } from './components/hyss/edit-hyss.component';
+import { NewHyssComponent } from './components/hyss/new-hyss.component';
 
 
 @NgModule({
@@ -53,6 +55,8 @@ import { ImagenLComponent } from './components/imagen-l/imagen-l.component';
     ImagenCComponent,
     ImagenDComponent,
     ImagenLComponent,
+    EditHyssComponent,
+    NewHyssComponent,
   
   ],
   imports: [

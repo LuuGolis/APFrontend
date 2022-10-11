@@ -45,7 +45,7 @@ public class PersonaController {
     //Se usan llaves en id xq es un valor que va a cambiar según el id indicado @PathVariable se usa x lo mismo ewe
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/personas/borrar/{id}")
-     public String deletePersona(@PathVariable Long id)       {
+     public String deletePersona(@PathVariable Integer id)       {
          ipersonaService.deletePersona(id);
          return "Persona eliminada correctamente";
      }
@@ -53,7 +53,7 @@ public class PersonaController {
      //editar personas :3
      @PreAuthorize("hasRole('ADMIN')")
      @PutMapping("/personas/editar/{id}")
-     public Persona editPersona(@PathVariable Long id, 
+     public Persona editPersona(@PathVariable Integer id, 
              @RequestParam("nombre") String nuevoNombre,
              @RequestParam("apellido") String nuevoApellido,
              @RequestParam("img") String nuevoImg){
@@ -69,6 +69,6 @@ public class PersonaController {
      //atenti 
      @GetMapping("/personas/traer/perfil") 
      public Persona findPersona(){
-         return ipersonaService.findPersona((long)1);
+         return ipersonaService.findPersona((Integer)1);
      }
 }

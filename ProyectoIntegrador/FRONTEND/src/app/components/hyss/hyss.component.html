@@ -5,12 +5,15 @@ chequear https://www.npmjs.com/package/ng-circle-progress */
  -->
 <div class="row">
     <h1>Hard&Soft skills</h1>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+<div class="col-lg-2"> 
+  <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Nueva</button>
+</div>
+    <div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let skill of skill">
     <circle-progress
-  [percent]="85"
+  [percent]="(skill.porcentaje)"
   [radius]="100"
   [showUnits]="false" 
-  [title]="'HTML'"
+  [title]="(skill.nombre)"
   [titleColor]="'black'"
   [titleFontSize]="'50'"
   [outerStrokeWidth]="16"
@@ -20,90 +23,11 @@ chequear https://www.npmjs.com/package/ng-circle-progress */
   [animation]="true"
   [animationDuration]="300"
 ></circle-progress>
+<td *ngIf="isLogged">
+  <button class ="btn btn-light" routerLink="/editskill/{{skill.id}}">
+      <i class="bi bi-pen-fill"></i></button></td>
+
+<td *ngIf="isLogged">
+  <button class ="btn btn-danger" (click)="deleteSkill(skill.id)">
+      <i class="bi bi-trash-fill"></i> </button></td>
 </div>
-<div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-  [percent]="85"
-  [radius]="100"
-  [showUnits]="false" 
-  [title]="'HTML'"
-  [titleColor]="'#F8BBD0'"
-  [titleFontSize]="'50'"
-  [outerStrokeWidth]="16"
-  [innerStrokeWidth]="8"
-  [outerStrokeColor]="'#78C000'"
-  [innerStrokeColor]="'#C7E596'"
-  [animation]="true"
-  [animationDuration]="300"
-></circle-progress>
-</div>
-<div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-  [percent]="85"
-  [radius]="100"
-  [showUnits]="false" 
-  [title]="'HTML'"
-  [titleColor]="'#F8BBD0'"
-  [titleFontSize]="'50'"
-  [outerStrokeWidth]="16"
-  [innerStrokeWidth]="8"
-  [outerStrokeColor]="'#78C000'"
-  [innerStrokeColor]="'#C7E596'"
-  [animation]="true"
-  [animationDuration]="300"
-></circle-progress>
-</div>
-<div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-  [percent]="85"
-  [radius]="100"
-  [showUnits]="false" 
-  [title]="'HTML'"
-  [titleColor]="'#F8BBD0'"
-  [titleFontSize]="'50'"
-  [outerStrokeWidth]="16"
-  [innerStrokeWidth]="8"
-  [outerStrokeColor]="'#78C000'"
-  [innerStrokeColor]="'#C7E596'"
-  [animation]="true"
-  [animationDuration]="300"
-></circle-progress>
-</div>
-<div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-  [percent]="85"
-  [radius]="100"
-  [showUnits]="false" 
-  [title]="'HTML'"
-  [titleColor]="'#F8BBD0'"
-  [titleFontSize]="'50'"
-  [outerStrokeWidth]="16"
-  [innerStrokeWidth]="8"
-  [outerStrokeColor]="'#78C000'"
-  [innerStrokeColor]="'#C7E596'"
-  [animation]="true"
-  [animationDuration]="300"
-></circle-progress>
-</div>
-<div class="text-center col-sm-4 col-md-4 col-lg-4">
-    <circle-progress
-  [percent]="85"
-  [radius]="100"
-  [showUnits]="false" 
-  [title]="'HTML'"
-  [titleColor]="'#F8BBD0'"
-  [titleFontSize]="'50'"
-  [outerStrokeWidth]="16"
-  [innerStrokeWidth]="8"
-  [outerStrokeColor]="'#78C000'"
-  [innerStrokeColor]="'#C7E596'"
-  [animation]="true"
-  [animationDuration]="300"
-></circle-progress>
-</div>
-</div>
-<!-- Opcional mostrar imagen dentro del circle:
-[imageSrc]="'../../etc asstesblablaba'" 
-[showImage]= "true"
-[imageWidth]="70"
-[imageHeight]="70"-->

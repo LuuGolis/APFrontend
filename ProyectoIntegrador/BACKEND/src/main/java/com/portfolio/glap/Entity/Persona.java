@@ -18,7 +18,7 @@ import lombok.Setter;
  *
  * @author lugol
  */
-@Getter @Setter
+
 @Entity
 public class Persona {
     
@@ -34,8 +34,61 @@ public class Persona {
     @NotNull
     @Size(min = 1, max = 50, message = "No cumple con la longitud" )
     private String apellido;
-     @Size(min = 1, max = 50, message = "No cumple con la longitud" )
+    
+    @NotNull
+    private String acercaDe;
+    
     private String img;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getAcercaDe() {
+        return acercaDe;
+    }
+
+    public void setAcercaDe(String acercaDe) {
+        this.acercaDe = acercaDe;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public Persona(String nombre, String apellido, String acercaDe, String img) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.acercaDe = acercaDe;
+        this.img = img;
+    }
+
+    public Persona() {
+    }
 
    
    

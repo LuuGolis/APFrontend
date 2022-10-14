@@ -31,6 +31,7 @@ import { ImagenDComponent } from './components/imagen-d/imagen-d.component';
 import { ImagenLComponent } from './components/imagen-l/imagen-l.component';
 import { EditHyssComponent } from './components/hyss/edit-hyss.component';
 import { NewHyssComponent } from './components/hyss/new-hyss.component';
+import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { NewHyssComponent } from './components/hyss/new-hyss.component';
     ImagenLComponent,
     EditHyssComponent,
     NewHyssComponent,
+    EditAcercaDeComponent,
   
   ],
   imports: [

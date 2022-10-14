@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import {  Mhyss } from '../model/Mhyss';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShyssService {
-  URL = 'http://localhost:8090/hyss/';
+  URL = 'https://git.heroku.com/backendglap.git/hyss/';
 
   constructor(private httpClient: HttpClient) { }
 //Hyss es array vacío xq hay + de 1 skill

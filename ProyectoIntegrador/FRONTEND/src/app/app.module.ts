@@ -22,13 +22,7 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { NeweducacionComponent } from './components/educacion/neweducacion.component';
 import { EditeducacionComponent } from './components/educacion/editeducacion.component';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { AngularFireStorageModule } from'@angular/fire/compat/storage';
 import { environment } from 'src/environments/environment';
-import { ImagenCComponent } from './components/imagen-c/imagen-c.component';
-import { ImagenDComponent } from './components/imagen-d/imagen-d.component';
-import { ImagenLComponent } from './components/imagen-l/imagen-l.component';
 import { EditHyssComponent } from './components/hyss/edit-hyss.component';
 import { NewHyssComponent } from './components/hyss/new-hyss.component';
 import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
@@ -53,9 +47,6 @@ import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.com
     EditExperienciaComponent,
     NeweducacionComponent,
     EditeducacionComponent,
-    ImagenCComponent,
-    ImagenDComponent,
-    ImagenLComponent,
     EditHyssComponent,
     NewHyssComponent,
     EditAcercaDeComponent,
@@ -67,10 +58,7 @@ import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.com
     AppRoutingModule,
     FormsModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
-    AngularFireStorageModule
+    HttpClientModule
 
   ],
   providers: [

@@ -8,7 +8,7 @@ import { Educacion } from '../model/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-  URL = 'https://git.heroku.com/backendglap.git/educacion/';
+  URL = 'https://beglap.herokuapp.com/educacion/';
 
 
   constructor(private httpClient: HttpClient) { }

@@ -8,7 +8,7 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class SExperienciaService {
-  expURL = 'https://git.heroku.com/backendglap.git/explab/'
+  expURL ='https://beglap.herokuapp.com/explab/'
   constructor(private httpClient: HttpClient) { }
 
   public lista(): Observable<Experiencia[]>{

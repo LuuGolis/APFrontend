@@ -3,9 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  firebase: {
+    projectId: 'frontendglap',
+    appId: '1:615578227850:web:3487389256339a7d104973',
+    storageBucket: 'frontendglap.appspot.com',
+    locationId: 'southamerica-east1',
+    apiKey: 'AIzaSyBGXNhcJSva_hZn55ytqPy9dvBCd9bNzhM',
+    authDomain: 'frontendglap.firebaseapp.com',
+    messagingSenderId: '615578227850',
+  },
   production: false,
-  //URL:'http://localhost:8090/',
- URL:'https://beglap.herokuapp.com/'
+  URL:'http://localhost:8090/',
+ //URL:'https://beglap.herokuapp.com/'
 };
 
 /*

@@ -8,8 +8,9 @@ import { Educacion } from '../model/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-  URL = 'https://beglap.herokuapp.com/educacion/';
+  //URL = 'https://beglap.herokuapp.com/educacion/';
 
+  URL = environment.URL + 'educacion/';
 
   constructor(private httpClient: HttpClient) { }
 

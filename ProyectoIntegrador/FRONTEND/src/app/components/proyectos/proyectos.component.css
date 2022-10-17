@@ -1,18 +1,25 @@
 .row{
-    background-color: #F8BBD0;
-    padding: 20px;
+    padding:20px;
 }
-.container{
-    width:auto;
+div{
+    background-color:#CE93D8 ;
 }
-/* recordar poner p2 cuando se agregue la imagen 
-y se descomente el codigo .html */
-.p1{
-    display:inline-block;
-    text-align: justify;
+h1,h3{
+    display:inline;
 }
-/* sombra para la imagen :3
-box-shadow: eje x eje y difumacion color 
-.img-proyectos{
-    box-shadow:10px 10px 30px #alguncolor;
-}*/
+.card-body{
+    background-color:#E0E0E0 ;
+}
+
+.card-header{
+    background-color:#F8BBD0 ;
+    text-align: center;
+}
+
+.button{
+    position: absolute;
+}
+
+h1{
+    text-align: center;
+}

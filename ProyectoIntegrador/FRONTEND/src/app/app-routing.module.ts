@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { EditHyssComponent } from './components/hyss/edit-hyss.component';
 import { NewHyssComponent } from './components/hyss/new-hyss.component';
 import { LoginComponent } from './components/login/login.component';
+import { EditProyectoComponent } from './components/proyectos/edit-proyecto.component';
+import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
 
 //import { ImagenCComponent } from './components/imagen-c/imagen-c.component';
 //import { ImagenDComponent } from './components/imagen-d/imagen-d.component';
@@ -25,7 +27,10 @@ const routes: Routes = [
   {path: 'editedu/:id', component: EditeducacionComponent},
   {path: 'newskill', component: NewHyssComponent},
   {path: 'editskill/:id', component: EditHyssComponent},
-  {path: 'editacercade/:id', component: EditAcercaDeComponent}
+  {path: 'editacercade/:id', component: EditAcercaDeComponent},
+  {path: 'editedu/:id', component: EditeducacionComponent},
+  {path: 'newproyecto', component: NewProyectoComponent},
+  {path: 'editproyecto/:id', component: EditProyectoComponent}
 
 ];
 

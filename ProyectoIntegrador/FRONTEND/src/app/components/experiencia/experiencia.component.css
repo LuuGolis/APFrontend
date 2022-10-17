@@ -2,8 +2,11 @@
     padding:20px;
 }
 div{
-    background-color:#F8BBD0 ;
+    background-color:#CE93D8  ;
 }
 h1,h3{
     display:inline;
+}
+h1{
+    text-align: center;
 }

@@ -24,11 +24,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- *
- * @author lugol
- * 
- */
+
 @RestController
 @RequestMapping("/proyecto")
 @CrossOrigin(origins = {"http://localhost:4200", "https://frontendglap.web.app"})
@@ -87,7 +83,7 @@ public class CProyecto {
         }
         Proyecto proyecto = sProyecto.getOne(id).get();
         proyecto.setNombreP(dtoproyecto.getNombreP());
-        proyecto.setDescripcioP(dtoproyecto.getDescripcionP());
+        proyecto.setDescripcionP(dtoproyecto.getDescripcionP());
         proyecto.setImgP(dtoproyecto.getImgP());
         
         sProyecto.save(proyecto);

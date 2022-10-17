@@ -1,21 +1,25 @@
+<div class="container-fluid">
+    <div class = "row">
+     <div class="col-lg-1">
+         <button type="button" class="btn btn-light" routerLink="/editacercade/1" *ngIf="isLogged">
+             Editar
+          </button>
+        
+     </div>  
+      
+        <div class="col-3">
+            <img src={{persona.img}} class="img-responsive" id="fotoperfil">
 
-<div class = "row">
-    <div class="col-lg-2">
-        <button type="button" class="btn btn-light" routerLink="/editacercade/1" *ngIf="isLogged">
-            Editar
-        </button>
-    </div>
-    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-        <img src={{persona.img}}
-        class="img-responsive" id="fotoperfil">
-    </div>
-    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-    <p id="nombre">{{persona.nombre}} {{persona.apellido}}</p>
-    <p>Full Stack Developer Jr</p>
-</div>
-<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-    <span>
+      <h3 id="nombre">{{persona.nombre}} {{persona.apellido}}</h3>
+      <h4>Full Stack Developer Jr</h4>
+      </div>
+
+      <div class="col-6">
+        <span>
         <h1>Acerca de mí</h1>
         <p>{{persona.acercaDe}}</p>
-    </span>
+        </span>
+      </div>
+        <div class="col-2"></div>
+    </div>
 </div>

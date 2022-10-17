@@ -5,28 +5,26 @@
  */
 package com.portfolio.glap.Entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- *
- * @author lugol
- */
+@Entity
 public class Proyecto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombreP;
-    private String descripcioP;
+    private String descripcionP;
     private String imgP;
 
     public Proyecto() {
     }
 
-    public Proyecto(String nombreP, String descripcioP, String imgP) {
+    public Proyecto(String nombreP, String descripcionP, String imgP) {
         this.nombreP = nombreP;
-        this.descripcioP = descripcioP;
+        this.descripcionP = descripcionP;
         this.imgP = imgP;
     }
 
@@ -46,12 +44,12 @@ public class Proyecto {
         this.nombreP = nombreP;
     }
 
-    public String getDescripcioP() {
-        return descripcioP;
+    public String getDescripcionP() {
+        return descripcionP;
     }
 
-    public void setDescripcioP(String descripcioP) {
-        this.descripcioP = descripcioP;
+    public void setDescripcionP(String descripcioP) {
+        this.descripcionP = descripcionP;
     }
 
     public String getImgP() {

@@ -1,38 +1,41 @@
 <div class="container-fluid">
-<div class="row">
-    <h1>Proyectos</h1>
-    <div class="col-lg-2">
-        <button type="button" class="btn btn-light" routerLink="/newproyecto" *ngIf="isLogged">
-            Nuevo Proyecto
-        </button>
-    </div>
-    
-
-    <div class="col-lg-1"></div>
-   
-            <div class="col-sm-4 col-md-4 col-lg-4" *ngFor="let Proyecto of proyecto">
-                <div class="card" style="width: 18rem;">
-                   <div class ="card-header">
-                    <h5 class="card-title">{{Proyecto.nombreP}}</h5>
-                      
-
-                   </div>
-                    <div class="card-body">
-                        <p class="card-text"> {{Proyecto.descripcionP}}</p>
-                     
-                        <img class="card-img-top" src={{Proyecto.imgP}}  alt="Card image cap">
-                        <td *ngIf="isLogged">
-                            <button class ="btn btn-light" routerLink="/editproyecto/{{Proyecto.id}}">
-                                <i class="bi bi-pen-fill"></i></button></td>
-                    
-                        <td *ngIf="isLogged">
-                            <button class ="btn btn-danger" (click)="delete(Proyecto.id)">
-                                <i class="bi bi-trash-fill"></i> </button></td>
-                            </div>
+    <div class="row">
+        <h1>Proyectos</h1>
+       
+            <tr>
+                <div class="col-lg-2">
+                  <button type="button" class="btn btn-dark" routerLink="/newproyecto" *ngIf="isLogged">
+                     Agregar
+                 </button>
+                 </div>
+            </tr>
+            <table class="table" *ngFor="let Proyecto of proyecto">
+            <div class="col-lg-1"></div>
+            <td>
+                <div class="col-sm-6 col-md-6 col-lg-6" >
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{Proyecto.nombreP}}</h5>
+                            <p class="card-text">{{Proyecto.descripcionP}}</p>
+                        </div>
+                        <img class="card-img-bottom" src="{{Proyecto.imgP}}" alt="Card image cap">
                     </div>
-                  </div>
-                <div >
-               
-</div>                  
+                    
+                </div>
+            </td>
+        <td *ngIf="isLogged">
+            <button class="btn btn-light" routerLink="/editproyecto/{{Proyecto.id}}">
+                <i class="bi bi-pen-fill"></i>
+            </button></td>
 
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" (click)="delete(Proyecto.id)">
+                    <i class="bi bi-trash-fill"></i>
+
+                </button>
+            </td>
+            
+        
+        </table>
+    </div>
 </div>

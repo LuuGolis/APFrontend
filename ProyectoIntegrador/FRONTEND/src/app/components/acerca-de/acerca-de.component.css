@@ -1,3 +1,14 @@
+.container-fluid{
+    background-color:#CE93D8  ;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+h1{
+    border-bottom: whitesmoke solid 3px;
+    border-radius: 5%;
+}
 .row{
     padding:20px;
 }

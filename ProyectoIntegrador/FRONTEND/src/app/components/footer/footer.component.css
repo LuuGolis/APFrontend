@@ -1,7 +1,9 @@
 .row{
-    background-color: #FFEBEE;
+    background-color: #8E24AA;
 }
 footer{
+    background-color: #8E24AA;
+    padding-top: 20px;
     color: #fefefe;;
     font-size: 14px;
     display: flex;

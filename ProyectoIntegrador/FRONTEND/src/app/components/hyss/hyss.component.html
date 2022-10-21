@@ -5,27 +5,27 @@ chequear https://www.npmjs.com/package/ng-circle-progress */
  -->
  <div class="container-fluid">
     <div class="row">
-       <h1>Hard&Soft skills</h1>
-        <div class="col-lg-2"> 
-            <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Agregar</button>
-        </div>
+       <h1><a  href="#" *ngIf="isLogged" class="btn btn-dark" routerLink="/newskill">Agregar </a>
+        Hard&Soft skills</h1>
+        
        <div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let skill of skill" >
         <circle-progress 
         [percent]="(skill.porcentaje)"
-        [radius]="100"
+        [radius]="80"
         [showUnits]="false" 
         [showBackground]="true"
         [backgroundColor]="'#E1BEE7'"
         [showTitle]="true"
+        [showSubtitle]="false"
         [title]="(skill.nombre)"
         [titleColor]="'black'"
-        [titleFontSize]="'50'"
-        [outerStrokeWidth]="14"
-        [innerStrokeWidth]="8"
+        [titleFontSize]="'40'"
+        [outerStrokeWidth]="10"
+        [innerStrokeWidth]="6"
         [outerStrokeColor]="'#D81B60'"
         [innerStrokeColor]="'#FF80AB'"
         [animation]="true"
-        [animationDuration]="300"
+        [animationDuration]="500"
          ></circle-progress>
         <td *ngIf="isLogged">
             <button class ="btn btn-light" routerLink="/editskill/{{skill.id}}">

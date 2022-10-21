@@ -4,10 +4,10 @@
     border-color: whitesmoke;
     border-width: 50px, 50px;
     border-radius: 5%;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 10px;
+    padding-left: 60px;
+    padding-right: 70px;
     padding-bottom: 20px;
+    padding-top: 10px;
    
 }
 .container-fluid{
@@ -30,9 +30,24 @@ h1{
     border-style: solid;
     border-color: whitesmoke;
     border-width: 50px, 50px;
-    border-radius: 5%;
     text-align: center;
     background-color: #F8BBD0;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+.card{
+    
+    border-color: #FCE4EC;
+    transition: all 0.2s ease;
+    cursor: pointer;  
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+  }
+
+.card:hover{
+
+    box-shadow: 6px 6px 6px 6px #8E24AA;
+    transform: scale(1.1);
+   
 }

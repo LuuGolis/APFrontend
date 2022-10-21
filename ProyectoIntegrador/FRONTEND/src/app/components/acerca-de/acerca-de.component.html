@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <div class = "row">
+    <div class = "row align-items-center">
      <div class="col-lg-1">
          <button type="button" class="btn btn-light" routerLink="/editacercade/1" *ngIf="isLogged">
              Editar
@@ -7,12 +7,13 @@
         
      </div>  
       
-        <div class="col-3">
+        <div class="col-4">
             <img src={{persona.img}} class="img-responsive" id="fotoperfil">
 
       <h3 id="nombre">{{persona.nombre}} {{persona.apellido}}</h3>
       <h4>Full Stack Developer Jr</h4>
       </div>
+      <div class="col-1"></div>
 
       <div class="col-6">
         <span>
@@ -20,6 +21,6 @@
         <p>{{persona.acercaDe}}</p>
         </span>
       </div>
-        <div class="col-2"></div>
+      <div class="col-1"></div>
     </div>
 </div>

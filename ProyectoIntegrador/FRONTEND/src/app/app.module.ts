@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LogoAPComponent } from './components/logo-ap/logo-ap.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
@@ -39,7 +38,6 @@ import { EditProyectoComponent } from './components/proyectos/edit-proyecto.comp
     BannerComponent,
     HeaderComponent,
     LogoAPComponent,
-    
     AcercaDeComponent,
     ExperienciaComponent,
     EducacionComponent,
@@ -61,7 +59,6 @@ import { EditProyectoComponent } from './components/proyectos/edit-proyecto.comp
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     NgCircleProgressModule.forRoot({}),

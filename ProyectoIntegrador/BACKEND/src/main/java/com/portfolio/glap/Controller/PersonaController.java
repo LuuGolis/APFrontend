@@ -56,6 +56,12 @@ public class PersonaController {
         if(StringUtils.isBlank(dtopersona.getNombre())){
             return new ResponseEntity(new Mensaje("El campo nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
+        if(StringUtils.isBlank(dtopersona.getApellido())){
+            return new ResponseEntity(new Mensaje("El campo nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+        }
+        if(StringUtils.isBlank(dtopersona.getAcercaDe())){
+            return new ResponseEntity(new Mensaje("El campo nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+        }
             if(sPersona.existsByNombre(dtopersona.getNombre())){
                 return new ResponseEntity(new Mensaje("El usuario ya existe"), HttpStatus.BAD_REQUEST);
             }
@@ -77,6 +83,14 @@ public class PersonaController {
         }
         if(StringUtils.isBlank(dtopersona.getNombre())){
             return new ResponseEntity(new Mensaje("Indicar nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+        }
+        
+        if(StringUtils.isBlank(dtopersona.getApellido())){
+            return new ResponseEntity(new Mensaje("Indicar apellido es obligatorio"), HttpStatus.BAD_REQUEST);
+        }
+  
+        if(StringUtils.isBlank(dtopersona.getAcercaDe())){
+            return new ResponseEntity(new Mensaje("La descripción es obligatoria"), HttpStatus.BAD_REQUEST);
         }
         Persona persona = sPersona.getOne(id).get();
         

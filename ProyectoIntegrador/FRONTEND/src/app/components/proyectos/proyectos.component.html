@@ -5,20 +5,21 @@
             Proyectos</h1>
     
             <table class="table" *ngFor="let Proyecto of proyecto">
-            <div class="col-lg-1"></div>
-                <div class="col-sm-6 col-md-6 col-lg-6" >
-                    <div class="card">
+           <div class="col-lg-1"></div>
+           <tbody>
+              <div class="col-sm-6 col-md-8 col-lg-8" > 
+                    <div class="card ">
                         <div class="card-body">
                             <h5 class="card-title">{{Proyecto.nombreP}}</h5>
                             <p class="card-text">{{Proyecto.descripcionP}}</p>
                         </div>
-                        <img class="card-img-bottom" src="{{Proyecto.imgP}}" alt="Card image cap">
+                        <img class="card-img-bottom" src={{Proyecto.imgP}} alt="Card image cap">
                         <a  href="#" *ngIf="isLogged" class="btn btn-primary" routerLink="/editproyecto/{{Proyecto.id}}"><i class="bi bi-pen-fill"></i> </a>
                           <a  href="#" *ngIf="isLogged" class="btn btn-danger" (click)="delete(Proyecto.id)"><i class="bi bi-trash-fill"></i> </a>
                     </div>
                     
-                </div>
-        
+           </div> 
+        </tbody>
         </table>
     </div>
 </div>

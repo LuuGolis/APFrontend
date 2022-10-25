@@ -81,12 +81,8 @@ public class Chyss {
         //indico que el nombre no puede ser null
         if(StringUtils.isBlank(dtohyss.getNombre()))
             return new ResponseEntity(new Mensaje("Indicar nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        //lo mismo que arriba pero para %
-        // OJO: PORCENTAJE ES INETEGR, HAY QUE ENCONTRAR OTRA FORMA QUE LO VALIDE
-        // SIN QUE SEA STRING UTILS
-        //if(StringUtils.isBlank(dtohyss.getPorcentaje()))
-           // return new ResponseEntity(new Mensaje("Indicar porcentaje es obligatorio"), HttpStaus.BAD_REQUEST);
-        
+   
+       
         Hyss hys = shyss.getOne(id).get();
         hys.setNombre(dtohyss.getNombre());
         hys.setPorcentaje((dtohyss.getPorcentaje()));

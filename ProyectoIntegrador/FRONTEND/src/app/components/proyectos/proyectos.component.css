@@ -3,9 +3,11 @@
     padding-bottom: 50px;
     padding-left: 50px;
     padding-right: 50px;
+    
 }
 .row{
-    
+
+   
     background-color:#FCE4EC;
     border-style: solid;
     border-color: whitesmoke;
@@ -40,6 +42,12 @@ h1{
 .card{
     background-color:#F8BBD0;
     padding-right: 20px;
+    width: 600px;
+    height: auto;
+    transition: all 0.2s ease;
+    cursor: pointer;  
+    margin-top: 10px;
+    margin-bottom: 10px;
 
 }
 .card-body{
@@ -47,6 +55,10 @@ h1{
     border-radius: 5px;
 }
 
+.card-img-bottom{
+    width: 500;
+    height: 300;
+}
 .card-header{
     background-color:#F8BBD0 ;
     text-align: center;
@@ -56,14 +68,7 @@ h1{
 .button{
     position: absolute;
 }
-.card{
 
-    transition: all 0.2s ease;
-    cursor: pointer;  
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-  }
 
 .card:hover{
 

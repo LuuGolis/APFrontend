@@ -4,6 +4,7 @@ import { Proyecto } from 'src/app/model/proyecto';
 import { ProyectoSService } from 'src/app/service/proyecto-s.service';
 import { TokenService } from 'src/app/service/token.service';
 
+
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',

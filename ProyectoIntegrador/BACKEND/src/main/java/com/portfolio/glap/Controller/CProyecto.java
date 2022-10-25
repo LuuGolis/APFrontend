@@ -64,6 +64,9 @@ public class CProyecto {
         if(sProyecto.existsByNombreP(dtoproyecto.getNombreP())){
             return new ResponseEntity(new Mensaje("El proyecto ya existe"), HttpStatus.BAD_REQUEST);
         }
+        if(StringUtils.isBlank(dtoproyecto.getDescripcionP())){
+            return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
+        }
         Proyecto proyecto = new Proyecto(dtoproyecto.getNombreP(), dtoproyecto.getDescripcionP(), dtoproyecto.getImgP());
        sProyecto.save(proyecto);
        return new ResponseEntity(new Mensaje("Proyecto agregado correctamente"), HttpStatus.OK);
@@ -80,6 +83,9 @@ public class CProyecto {
         if(StringUtils.isBlank(dtoproyecto.getNombreP())){
             return new ResponseEntity(new Mensaje("Indicar nombre es obligatorio"), HttpStatus.BAD_REQUEST);
             
+        }
+        if(StringUtils.isBlank(dtoproyecto.getDescripcionP())){
+            return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
         }
         Proyecto proyecto = sProyecto.getOne(id).get();
         proyecto.setNombreP(dtoproyecto.getNombreP());

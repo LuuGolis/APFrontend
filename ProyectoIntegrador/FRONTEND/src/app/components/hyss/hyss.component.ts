@@ -10,6 +10,7 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class HyssComponent implements OnInit {
  skill: Mhyss[] = [];
+ 
 
   constructor(private hyssS: ShyssService, private tokenService: TokenService) { }
  isLogged= false;
@@ -22,8 +23,10 @@ export class HyssComponent implements OnInit {
       this.isLogged = false;
     }
   }
+
  
-  cargarSkill(): void{
+ 
+cargarSkill(): void{
     this.hyssS.lista().subscribe(
       data => {
         this.skill = data;
@@ -42,4 +45,6 @@ export class HyssComponent implements OnInit {
       )
     }
   }
+
+
 }

@@ -30,7 +30,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/explab")
-@CrossOrigin(origins = {"http://localhost:4200", "https://frontendglap.web.app"})
+//@CrossOrigin(origins =  "https://frontendglap.web.app")
+@CrossOrigin(origins =  "http://localhost:4200/")
 public class CExperiencia {
     @Autowired
     SExperiencia sExperiencia;
@@ -68,12 +69,15 @@ public class CExperiencia {
    
     if(sExperiencia.existsByNombreE(dtoexp.getNombreE()))
         return new ResponseEntity(new Mensaje("La experiencia ya existe"), HttpStatus.BAD_REQUEST);
-    
+  
     if(StringUtils.isBlank(dtoexp.getDescripcionE()))
         return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);
    
+    if(StringUtils.isBlank(dtoexp.getAnioE())){
+        return new ResponseEntity(new Mensaje("El año es obligatorio"), HttpStatus.BAD_REQUEST);}
     
-    Experiencia experiencia = new Experiencia(dtoexp.getNombreE(), dtoexp.getDescripcionE());
+    
+    Experiencia experiencia = new Experiencia(dtoexp.getNombreE(), dtoexp.getDescripcionE(),dtoexp.getAnioE());
     sExperiencia.save(experiencia);
     
     return new ResponseEntity(new Mensaje("Experiencia agregada correctamente"), HttpStatus.OK);
@@ -92,11 +96,15 @@ public class CExperiencia {
         
         if(StringUtils.isBlank(dtoexp.getDescripcionE())){
         return new ResponseEntity(new Mensaje("La descripcion es obligatoria"), HttpStatus.BAD_REQUEST);}
+        
+        if(StringUtils.isBlank(dtoexp.getAnioE())){
+        return new ResponseEntity(new Mensaje("El año es obligatorio"), HttpStatus.BAD_REQUEST);}
    
         
         Experiencia experiencia = sExperiencia.getOne(id).get();
-        experiencia.setNombreE(dtoexp.getNombreE());
+        experiencia.setNombreE(dtoexp.getNombreE());        
         experiencia.setDescripcionE((dtoexp.getDescripcionE()));
+        experiencia.setAnioE(dtoexp.getAnioE());
         
         sExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("Experiencia correctamente actualizada"), HttpStatus.OK);

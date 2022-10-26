@@ -16,13 +16,16 @@ public class dtoHyss {
       private String nombre;
      @NotBlank
       private int porcentaje;
+     @NotBlank
+     private String subtitle;
 
     public dtoHyss() {
     }
 
-    public dtoHyss(String nombre, int porcentaje) {
+    public dtoHyss(String nombre, int porcentaje, String subtitle) {
         this.nombre = nombre;
         this.porcentaje = porcentaje;
+        this.subtitle = subtitle;
     }
 
     public String getNombre() {
@@ -39,6 +42,13 @@ public class dtoHyss {
 
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
+    }
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
     }
      
      

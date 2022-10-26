@@ -13,8 +13,9 @@ export const environment = {
     messagingSenderId: '615578227850',
   },
   production: false,
-  URL:'http://localhost:8090/',
- //URL:'https://beglap.herokuapp.com/'
+  
+  URL:'http://localhost:8090/'
+  //URL:'https://beglap.herokuapp.com/'
 };
 
 /*

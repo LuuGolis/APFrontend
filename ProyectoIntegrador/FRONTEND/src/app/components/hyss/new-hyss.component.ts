@@ -13,13 +13,14 @@ import { Mhyss } from 'src/app/model/Mhyss';
 export class NewHyssComponent implements OnInit {
   nombre: string;
   porcentaje: number;
+  subtitle: string;
 
   constructor(private hyssS: ShyssService, private router: Router ) { }
 
   ngOnInit(): void {
   }
   onCreate(): void {
-    const skill = new Mhyss(this.nombre, this.porcentaje);
+    const skill = new Mhyss(this.nombre, this.porcentaje, this.subtitle);
   this.hyssS.save(skill).subscribe(
     data => {
       alert("Habilidad creada");

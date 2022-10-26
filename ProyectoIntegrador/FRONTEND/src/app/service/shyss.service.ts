@@ -8,7 +8,7 @@ import {  Mhyss } from '../model/Mhyss';
   providedIn: 'root'
 })
 export class ShyssService {
-  //URL ='https://beglap.herokuapp.com/hyss/';
+ // URL ='https://beglap.herokuapp.com/hyss/';
   URL = environment.URL + 'hyss/';
 
   constructor(private httpClient: HttpClient) { }

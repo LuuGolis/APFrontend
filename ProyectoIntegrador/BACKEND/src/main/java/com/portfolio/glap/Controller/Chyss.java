@@ -25,7 +25,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:4200", "https://frontendglap.web.app"})
+//@CrossOrigin(origins =  "https://frontendglap.web.app")
+@CrossOrigin(origins =  "http://localhost:4200/")
 @RequestMapping("/hyss")
 public class Chyss {
     @Autowired
@@ -64,7 +65,10 @@ public class Chyss {
     if(shyss.existsByNombre(dtohyss.getNombre()))
         return new ResponseEntity(new Mensaje("La skill ya existe"), HttpStatus.BAD_REQUEST);
     
-    Hyss hys = new Hyss(dtohyss.getNombre(), dtohyss.getPorcentaje());
+    if(StringUtils.isBlank(dtohyss.getSubtitle()))
+        return new ResponseEntity(new Mensaje("El campo subtitulo es obligatorio"), HttpStatus.BAD_REQUEST);
+   
+    Hyss hys = new Hyss(dtohyss.getNombre(), dtohyss.getPorcentaje(), dtohyss.getSubtitle());
     shyss.save(hys);
     
     return new ResponseEntity(new Mensaje("Skill agregada correctamente"), HttpStatus.OK);
@@ -81,11 +85,15 @@ public class Chyss {
         //indico que el nombre no puede ser null
         if(StringUtils.isBlank(dtohyss.getNombre()))
             return new ResponseEntity(new Mensaje("Indicar nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+        
+        if(StringUtils.isBlank(dtohyss.getSubtitle()))
+        return new ResponseEntity(new Mensaje("El campo subtitulo es obligatorio"), HttpStatus.BAD_REQUEST);
    
        
         Hyss hys = shyss.getOne(id).get();
         hys.setNombre(dtohyss.getNombre());
         hys.setPorcentaje((dtohyss.getPorcentaje()));
+        hys.setSubtitle((dtohyss.getSubtitle()));
         
         shyss.save(hys);
         return new ResponseEntity(new Mensaje("Skill correctamente actualizada"), HttpStatus.OK);

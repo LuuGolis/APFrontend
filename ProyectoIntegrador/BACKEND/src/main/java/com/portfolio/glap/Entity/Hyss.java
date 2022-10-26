@@ -17,13 +17,16 @@ public class Hyss {
     private int id;
     private String nombre;
     private int porcentaje;
+    private String subtitle;
 
     public Hyss() {
     }
 
-    public Hyss(String nombre, int porcentaje) {
+    public Hyss(String nombre, int porcentaje, String subtitle) {
         this.nombre = nombre;
         this.porcentaje = porcentaje;
+        this.subtitle = subtitle;
+        
     }
 
     public int getId() {
@@ -48,6 +51,13 @@ public class Hyss {
 
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
+    }
+     public String getSubtitle() {
+        return subtitle;
+    }
+
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
     }
     
     

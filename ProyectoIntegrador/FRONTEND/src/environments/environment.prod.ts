@@ -9,5 +9,5 @@ export const environment = {
     messagingSenderId: '615578227850',
   },
   production: true,
-  URL: 'https://beglap.herokuapp.com/'
+  
 };

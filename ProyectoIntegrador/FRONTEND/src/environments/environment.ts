@@ -14,8 +14,7 @@ export const environment = {
   },
   production: false,
   
-  URL:'http://localhost:8090/'
-  //URL:'https://beglap.herokuapp.com/'
+  
 };
 
 /*

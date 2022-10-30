@@ -8,8 +8,8 @@ import {  Mhyss } from '../model/Mhyss';
   providedIn: 'root'
 })
 export class ShyssService {
- // URL ='https://beglap.herokuapp.com/hyss/';
-  URL = environment.URL + 'hyss/';
+  URL ='https://beglap.herokuapp.com/hyss/';
+ 
 
   constructor(private httpClient: HttpClient) { }
 //Hyss es array vacío xq hay + de 1 skill

@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ProyectoSService {
-  URL = 'https://beglap.onrender.com/';
+  URL = 'https://beglap.onrender.com/proyecto/';
   
   urlimg: string = "";
  

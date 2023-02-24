@@ -10,7 +10,7 @@ import { NuevoUsuario } from '../model/nuevo-usuario';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL = 'https://beglap.herokuapp.com/auth/';
+  authURL = 'https://beglap.onrender.com/';
 
 
   constructor(private httpClient: HttpClient) { }

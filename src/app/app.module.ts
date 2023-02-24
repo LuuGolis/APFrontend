@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +14,6 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HyssComponent } from './components/hyss/hyss.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HttpClient, HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { interceptorProvider } from './service/interceptor-service';
@@ -21,7 +21,6 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { NeweducacionComponent } from './components/educacion/neweducacion.component';
 import { EditeducacionComponent } from './components/educacion/editeducacion.component';
-
 import { EditHyssComponent } from './components/hyss/edit-hyss.component';
 import { NewHyssComponent } from './components/hyss/new-hyss.component';
 import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
@@ -54,15 +53,16 @@ import { EditProyectoComponent } from './components/proyectos/edit-proyecto.comp
     NewHyssComponent,
     EditAcercaDeComponent,
     NewProyectoComponent,
-    EditProyectoComponent,
+    EditProyectoComponent
+    
   
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideStorage(() => getStorage())
 

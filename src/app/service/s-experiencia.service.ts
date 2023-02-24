@@ -8,7 +8,7 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class SExperienciaService {
-  expURL ='https://beglap.herokuapp.com/explab/';
+  expURL ='https://beglap.onrender.com/';
 
   constructor(private httpClient: HttpClient) { }
 

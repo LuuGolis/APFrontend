@@ -9,7 +9,7 @@ import { Persona } from '../model/persona.model';
   providedIn: 'root'
 })
 export class PersonaService {
-URL = 'https://beglap.herokuapp.com/persona/';
+URL = 'https://beglap.onrender.com/';
 
 
   constructor(private httpClient: HttpClient) { }

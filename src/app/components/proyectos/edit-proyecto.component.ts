@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyecto } from 'src/app/model/proyecto';
+import { ImagenService } from 'src/app/service/imagen.service';
 import { ProyectoSService } from 'src/app/service/proyecto-s.service';
 
 @Component({
@@ -13,7 +14,7 @@ proyecto: Proyecto = null;
 
 
   constructor(private activatedRouter: ActivatedRoute, private proyectoS: ProyectoSService,
-    private router: Router,
+    private router: Router, public imageServiceLogoP: ImagenService
    ) { }
 
   ngOnInit(): void {
@@ -30,7 +31,9 @@ proyecto: Proyecto = null;
   
 onUpdate(): void {
   const id = this.activatedRouter.snapshot.params['id'];
-  this.proyecto.imgP = this.proyectoS.urlimg
+  if(this.imageServiceLogoP.url !=""){
+  this.proyecto.imgP = this.imageServiceLogoP.urlImg
+}
   this.proyectoS.update(id, this.proyecto).subscribe(
     data => {
       this.router.navigate(['']);
@@ -40,11 +43,18 @@ onUpdate(): void {
       this.router.navigate(['']);
     }
   )
+  this.imageServiceLogoP.clearUrl();
 }
-uploadImageP($event: any){
+
+uploadImage($event: any){
   const id = this.activatedRouter.snapshot.params['id'];
   const name = "proyecto-" + id;
-  this.proyectoS.uploadImageP($event, name)
+  this.imageServiceLogoP.uploadImage($event, name)
  }
+ cancel(): void {
 
+  this.imageServiceLogoP.clearUrl();
+  this.router.navigate(['']);
+
+}
 }

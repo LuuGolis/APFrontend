@@ -10,7 +10,7 @@ import { NuevoUsuario } from '../model/nuevo-usuario';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL = 'https://beglap.onrender.com/auth/';
+  authURL = environment.URL + 'auth/';
 
 
   constructor(private httpClient: HttpClient) { }

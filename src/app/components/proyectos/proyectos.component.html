@@ -3,7 +3,7 @@
         <h1>
             <a  href="#" *ngIf="isLogged" class="btn btn-dark" routerLink="/newproyecto">Agregar </a>
             <b>Proyectos</b></h1>
-     <!--
+     
             <table class="table" *ngFor="let Proyecto of proyecto">
            <div class="col-lg-1"></div>
           
@@ -21,7 +21,7 @@
                     </div>
                     
            </div>
-        </table> -->
+        </table> <!--
            <div class="col-sm-6 col-md-8 col-lg-8" > 
             <div class="card ">
                 <div class="card-body">
@@ -31,7 +31,7 @@
                      <a href="https://github.com/LuuGolis/ProyectoGestoria2022">Ver en GitHub</a></p>
                 </div>
                 <img class="card-img-bottom" src="../../../assets/proyecto.png" alt="Card image cap">
-                <!--
+                
                     Intenté realizar un servicio para gestionar las imagenes del apartado proyectos
                     pero comenzó a dar error al momento de aplicar los cambios y los proyectos
                     no se creaban, al no lograr conseguir corregir el error hasta el momento,
@@ -41,7 +41,7 @@
                      y no guardar datos en la base de datos.
                 <a  href="#" *ngIf="isLogged" class="btn btn-primary" routerLink="/editproyecto/{{Proyecto.id}}"><i class="bi bi-pen-fill"></i> </a>
                   <a  href="#" *ngIf="isLogged" class="btn btn-danger" (click)="delete(Proyecto.id)"><i class="bi bi-trash-fill"></i> </a>
-                         -->
+                         
                 </div>
             <div class="col-sm-6 col-md-8 col-lg-8" > 
                 <div class="card ">
@@ -50,11 +50,11 @@
                         <p class="card-text"> Realicé este protfolio web integrando los conocimientos adquiridos
                             en el programa. <br>
                          <a href="https://github.com/LuuGolis/ProyectoIntegrador">Ver en GitHub</a></p>
-                    </div>
-                    <!--<img class="card-img-bottom" src={{Proyecto.imgP}} alt="Card image cap">
+                    </div> 
+                    <img class="card-img-bottom" src={{Proyecto.imgP}} alt="Card image cap">
                     <a  href="#" *ngIf="isLogged" class="btn btn-primary" routerLink="/editproyecto/{{Proyecto.id}}"><i class="bi bi-pen-fill"></i> </a>
-                      <a  href="#" *ngIf="isLogged" class="btn btn-danger" (click)="delete(Proyecto.id)"><i class="bi bi-trash-fill"></i> </a>-->
-                </div>
+                      <a  href="#" *ngIf="isLogged" class="btn btn-danger" (click)="delete(Proyecto.id)"><i class="bi bi-trash-fill"></i> </a>
+                </div>-->
 
        
     </div>

@@ -7,6 +7,8 @@ import { Storage, ref, uploadBytes, list, getDownloadURL } from '@angular/fire/s
 })
 export class ImagenService {
 url: string="";
+urlImg: string = "";
+nombre: string= "";
 
   constructor(private storage:Storage) { }
 
@@ -15,7 +17,10 @@ url: string="";
     const file = $event.target.files[0]
     //carpeta img en firebase storage
     const imgRef = ref(this.storage, `img/`+ name)
-    uploadBytes(imgRef, file).then(response => {this.getImage()}).catch(error => console.log(error))
+    this.nombre = name;
+    uploadBytes(imgRef, file)
+    .then(response => {this.getImage()})
+    .catch(error => console.log(error))
 
   }
 
@@ -27,8 +32,17 @@ url: string="";
       for(let item of response.items){
         
         this.url = await getDownloadURL(item);
+        if(this.nombre == item.name){
+          this.urlImg = this.url;
+        }
         console.log("la url es:" + this.url);
     }
     }).catch(error => console.log(error))
+  }
+
+  deleteImg(img:string):void{}
+
+  clearUrl(){
+    this.url = "";
   }
 }

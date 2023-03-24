@@ -14,10 +14,14 @@
               
                 <div class="form-group">
                     <label for="imgP">Imagen</label>
-                    <input type="file" class="form-control" id="imgP"  [(ngModel)]="proyecto.imgP" name="imgp" (change)="uploadImageP($event)" accept=".jpg, .jpeg, .png">
+                    <input type="file" class="form-control" id="imgP"  
+                    [(ngModel)]="proyecto.imgP" name="imgp"
+                     (change)="uploadImage($event)" accept=".jpg, .jpeg, .png">
                 </div>
                 <div class="ImagenP">
-                    <img [src]="proyecto.imgP" alt="" width="200px">
+                    <img [src]="proyecto.imgP" alt="Imagen" width="200px"
+                    *ngIf="imageServiceLogoP.url !=''">
+                    
                 </div>
                 <button class="btn btn-primary">
                     Editar

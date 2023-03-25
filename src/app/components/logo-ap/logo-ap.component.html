@@ -1,17 +1,24 @@
-<div class="row">
-    <div class="container">
-        <div class="logoAp">
-         <a href=""><img src="../../../assets/APLogo1.png" id:logo>   </a>
-        </div>
-         <div class="redes">
-                 
-              <a href="https://github.com/LuuGolis"> <img src="../../../assets/github.png" id:git ></a>      
-              <a href="https://www.linkedin.com/in/ludmila-golischevsky-798657219/"><img src="../../../assets/linkedin.png" id:ln></a>  
+<!DOCTYPE html>
+<html lang="en">
 
-              <button type="button"   class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Ingreso</button>
-              <button type="button"   class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">Cerrar sesión</button>
-            </div> 
-</div>
-</div>
-         
-    
+<body class="container-fluid">
+  <section class="row d-flex align-items-center">
+
+    <div class=" d-flex justify-content-start px-1 pb-2 ">
+      <a class="flex-grow-1" href="">
+        <img src="../../../assets/APLogo1.png" width="150px"
+          height="50px" id="logo"> </a>
+
+      <a class="px-1 pb-2" href="https://github.com/LuuGolis">
+        <img src="../../../assets/github.png" width="50px" height="50px" id="git"></a>
+
+      <a class="px-1 pb-2" href="https://www.linkedin.com/in/ludmila-golischevsky-798657219/">
+        <img src="../../../assets/linkedin.png" width="50px" height="50px" id="ln"></a>
+
+      <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Ingreso</button>
+      <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">Cerrar sesión</button>
+    </div>
+  </section>
+</body>
+
+</html>

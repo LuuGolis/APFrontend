@@ -1,27 +1,28 @@
-<div class="container-fluid">
-    <div class="row">
-        <h1>
-            <a  href="#" *ngIf="isLogged" class="btn btn-dark" routerLink="/newproyecto">Agregar </a>
-            <b>Proyectos</b></h1>
-     
-            <table class="table" *ngFor="let Proyecto of proyecto">
-           <div class="col-lg-1"></div>
-          
-           
-              <div class="col-sm-6 col-md-8 col-lg-8" > 
-                    <div class="card ">
-                        <div class="card-body">
-                            <h3 class="card-title"><b>{{Proyecto.nombreP}}</b></h3>
-                            <p class="card-text">{{Proyecto.descripcionP}} <br>
-                             <a href="https://github.com/LuuGolis?tab=repositories">Ver en GitHub</a></p>
-                        </div>
-                        <img class="card-img-bottom" src={{Proyecto.imgP}} alt="Card image cap">
-                        <a  href="#" *ngIf="isLogged" class="btn btn-primary" routerLink="/editproyecto/{{Proyecto.id}}"><i class="bi bi-pen-fill"></i> </a>
-                          <a  href="#" *ngIf="isLogged" class="btn btn-danger" (click)="delete(Proyecto.id)"><i class="bi bi-trash-fill"></i> </a>
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="container-fluid">
+    <section class="row">
+        <a href="#" *ngIf="isLogged" class="btn btn-dark" routerLink="/newproyecto">Agregar </a>
+        <h2 id="titulo"> <b>Proyectos</b></h2>
+
+        <article class="col d-flex justify-content-around" *ngFor="let Proyecto of proyecto">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title"><b>{{Proyecto.nombreP}}</b></h3>
+                        <p class="card-text">{{Proyecto.descripcionP}} <br>
+                            <a href="https://github.com/LuuGolis?tab=repositories">Ver en GitHub</a>
+                        </p>
                     </div>
-                    
-           </div>
-        </table> <!--
+                    <img class="card-img-bottom img-fluid" src={{Proyecto.imgP}} alt="Card image cap">
+                    <a href="#" *ngIf="isLogged" class="btn btn-primary" routerLink="/editproyecto/{{Proyecto.id}}"><i
+                            class="bi bi-pen-fill"></i> </a>
+                    <a href="#" *ngIf="isLogged" class="btn btn-danger" (click)="delete(Proyecto.id)"><i
+                            class="bi bi-trash-fill"></i> </a>
+                </div>
+
+        </article> <!--
            <div class="col-sm-6 col-md-8 col-lg-8" > 
             <div class="card ">
                 <div class="card-body">
@@ -56,6 +57,8 @@
                       <a  href="#" *ngIf="isLogged" class="btn btn-danger" (click)="delete(Proyecto.id)"><i class="bi bi-trash-fill"></i> </a>
                 </div>-->
 
-       
-    </div>
-</div>
+
+    </section>
+</body>
+
+</html>

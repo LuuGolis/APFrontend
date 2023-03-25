@@ -1,28 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="container-fluid">
-<div class="row">
-    <h1>
-        <a  href="#" *ngIf="isLogged" class="btn btn-dark" routerLink="/nuevaexp">Agregar </a>
-       <b> Experiencia laboral</b>
-    </h1>
-    
-  
-        <table class="table">
-             <tbody *ngFor="let Experiencia of expe">
-                <div class="card">
-                    <div class="card-body">
-                          <h2 class="card-title">{{Experiencia.nombreE}}</h2>
-                          <p class="card-text"><b><i>{{Experiencia.anioE}}</i></b><br>
-                           {{Experiencia.descripcionE}}</p> 
-                          <a  href="#" *ngIf="isLogged" class="btn btn-primary" routerLink="/editexp/{{Experiencia.id}}"><i class="bi bi-pen-fill"></i> </a>
-                          <a  href="#" *ngIf="isLogged" class="btn btn-danger" (click)="delete(Experiencia.id)"><i class="bi bi-trash-fill"></i> </a>
-                          
-                     </div>
-                 </div>
-                
-             </tbody>
-    
-       </table>
-    </div>
-</div>
+<body class="container-fluid">
+    <section class="row align-items-center">
+        <a href="#" *ngIf="isLogged" class="btn btn-dark" routerLink="/nuevaexp">Agregar </a>
+        <h2 id="titulo">
+            <b> Experiencia laboral</b>
+        </h2>
 
+        <ul *ngFor="let Experiencia of expe">
+            <li class="mx-4">
+                <h2>{{Experiencia.nombreE}}</h2>
+                <p><b><i>{{Experiencia.anioE}}</i></b></p><br>
+                 <p>   {{Experiencia.descripcionE}}</p>
+                <a href="#" *ngIf="isLogged" class="btn btn-primary" routerLink="/editexp/{{Experiencia.id}}"><i
+                        class="bi bi-pen-fill"></i> </a>
+                <a href="#" *ngIf="isLogged" class="btn btn-danger" (click)="delete(Experiencia.id)"><i
+                        class="bi bi-trash-fill"></i> </a>
+
+            </li>
+        </ul>
+    </section>
+</body>
+</html>

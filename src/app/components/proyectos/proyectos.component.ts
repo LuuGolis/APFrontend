@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/model/proyecto';
 import { ProyectoSService } from 'src/app/service/proyecto-s.service';
 import { TokenService } from 'src/app/service/token.service';
+import { ImagenService } from 'src/app/service/imagen.service';
 
 
 @Component({

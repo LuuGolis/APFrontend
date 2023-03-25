@@ -10,51 +10,46 @@ import { ProyectoSService } from 'src/app/service/proyecto-s.service';
   styleUrls: ['./edit-proyecto.component.css']
 })
 export class EditProyectoComponent implements OnInit {
-proyecto: Proyecto = null;
+  proyecto: Proyecto = null;
 
 
   constructor(private activatedRouter: ActivatedRoute, private proyectoS: ProyectoSService,
-    private router: Router, public imageServiceLogoP: ImagenService
-   ) { }
+    private router: Router, public imageSP: ImagenService
+  ) { }
 
   ngOnInit(): void {
+    this.imageSP.clearUrl();
     const id = this.activatedRouter.snapshot.params['id'];
     this.proyectoS.detail(id).subscribe(
-      data =>{
+      data => {
         this.proyecto = data;
-      }, err =>{
+      }, err => {
         alert("Error al editar proyecto");
         this.router.navigate(['']);
       }
     )
   }
-  
-onUpdate(): void {
-  const id = this.activatedRouter.snapshot.params['id'];
-  if(this.imageServiceLogoP.url !=""){
-  this.proyecto.imgP = this.imageServiceLogoP.urlImg
-}
-  this.proyectoS.update(id, this.proyecto).subscribe(
-    data => {
-      this.router.navigate(['']);
-      alert("Datos actualizados correctamente");
-    }, err =>{
-      alert("Error el editar los datos :c");
-      this.router.navigate(['']);
+
+  onUpdate(): void {
+    const id = this.activatedRouter.snapshot.params['id'];
+    if (this.imageSP.url != "") {
+      this.proyecto.imgP = this.imageSP.urlImg
     }
-  )
-  this.imageServiceLogoP.clearUrl();
-}
+    this.proyectoS.update(id, this.proyecto).subscribe(
+      data => {
+        this.router.navigate(['']);
+        alert("Datos actualizados correctamente");
+      }, err => {
+        alert("Error el editar los datos :c");
+        this.router.navigate(['']);
+      }
+    )
+  }
 
-uploadImage($event: any){
-  const id = this.activatedRouter.snapshot.params['id'];
-  const name = "proyecto-" + id;
-  this.imageServiceLogoP.uploadImage($event, name)
- }
- cancel(): void {
+  uploadImage($event: any) {
+    const id = this.activatedRouter.snapshot.params['id'];
+    const name = "proyecto-" + id;
+    this.imageSP.uploadImage($event, name)
+  }
 
-  this.imageServiceLogoP.clearUrl();
-  this.router.navigate(['']);
-
-}
 }

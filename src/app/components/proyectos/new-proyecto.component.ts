@@ -10,35 +10,38 @@ import { ProyectoSService } from 'src/app/service/proyecto-s.service';
   styleUrls: ['./new-proyecto.component.css']
 })
 export class NewProyectoComponent implements OnInit {
- nombreP: string = '';
- descripcionP: string = '';
- imgP: string = '';
- nameP: string;
- 
+  nombreP: string = '';
+  descripcionP: string = '';
+  imgP: string = '';
+  nameP: string = '';
 
-  constructor(private sProyecto: ProyectoSService, private activatedRouter: ActivatedRoute, 
-    private router: Router, public imageServiceLogoP: ImagenService) { }
+
+  constructor(private sProyecto: ProyectoSService, private activatedRouter: ActivatedRoute,
+    private router: Router, public imageSNP: ImagenService) { }
 
   ngOnInit(): void {
-    this.imageServiceLogoP.clearUrl();
+    this.imageSNP.clearUrl();
   }
 
-  onCreate(): void{
-    this.imgP = this.imageServiceLogoP.url;
+  onCreate(): void {
+    const id = this.activatedRouter.snapshot.params['id'];
+    this.imgP = this.imageSNP.url;
+
     const proyecto = new Proyecto(this.nombreP, this.descripcionP, this.imgP);
-    //const id = this.activatedRouter.snapshot.params['id'];
-    this.sProyecto.save(proyecto).subscribe(data=>{alert("Proyecto agregado");
-    this.router.navigate(['']);
-      },err =>{alert("Error al agregar proyecto");
-          this.router.navigate(['']);
-      })
-      this.imageServiceLogoP.clearUrl();
-  }
-
-  uploadImage($event: any){
     
-    const nameP = "proyecto-" + this.nameP;
-    this.imageServiceLogoP.uploadImage($event, nameP)
-   }
-
+    this.sProyecto.save(proyecto).subscribe(data => {
+      alert("Proyecto agregado");
+      this.router.navigate(['']);
+    }, err => {
+      alert("Error al agregar proyecto");
+      this.router.navigate(['']);
+    })
   }
+
+  uploadImage($event: any) {
+    const id = this.activatedRouter.snapshot.params['id'];
+    const name = "proyecto-" + id;
+    this.imageSNP.uploadImage($event, name)
+  }
+
+}

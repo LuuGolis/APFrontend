@@ -17,6 +17,7 @@ export class EditAcercaDeComponent implements OnInit {
     public imagenS: ImagenService ) { }
 
   ngOnInit(): void {
+    this.imagenS.clearUrl();
     const id = this.activatedRouter.snapshot.params['id'];
     this.personaS.detail(id).subscribe(
       data =>{
@@ -29,7 +30,10 @@ export class EditAcercaDeComponent implements OnInit {
   }
 onUpdate(): void {
   const id = this.activatedRouter.snapshot.params['id'];
-  this.persona.img = this.imagenS.url
+  if (this.imagenS.url != "") {
+    this.persona.img = this.imagenS.urlImg
+  }
+
   this.personaS.update(id, this.persona).subscribe(
     data => {
       this.router.navigate(['']);

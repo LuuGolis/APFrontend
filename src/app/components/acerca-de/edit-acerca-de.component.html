@@ -20,7 +20,8 @@
                     <input type="file" class="form-control" id="img" name="img"[(ngModel)]="persona.img" name="img" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png">
                 </div>
                 <div class="Imagen">
-                    <img [src]="imagenS.url" alt="" width="200px">
+                    <img [src]="imagenS.url" alt="imagen de perfil" width="200px"
+                    *ngIf="imagenS.url !=''">
                 </div>
                 <button class="btn btn-primary">
                     Editar

@@ -1,36 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
 
- <div class="container-fluid">
-    <div class="row">
-       <h1><a  href="#" *ngIf="isLogged" class="btn btn-dark" routerLink="/newskill">Agregar </a>
-        <b>Hard&Soft skills</b></h1>
-        
-       <div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let skill of skill" >
-        <circle-progress 
-        [percent]="(skill.porcentaje)"
-        [radius]="80"
-        [showUnits]="false" 
-        [showBackground]="true"
-        [backgroundColor]="'#E1BEE7'"
-        [showTitle]="true"
-        [showSubtitle]="true"
-        [subtitle]="(skill.subtitle)"
-        [subtitleColor]="'black'"
-        [title]="(skill.nombre)"
-        [titleColor]="'black'"
-        [titleFontSize]="'40'"
-        [outerStrokeWidth]="10"
-        [innerStrokeWidth]="6"
-        [outerStrokeColor]="'#D81B60'"
-        [innerStrokeColor]="'#FF80AB'"
-        [animation]="true"
-        [animationDuration]="500"
-         ></circle-progress>
-        <td *ngIf="isLogged">
-            <button class ="btn btn-light" routerLink="/editskill/{{skill.id}}">
-              <i class="bi bi-pen-fill"></i></button></td>
+<body class="container-fluid">
+  <section class="row">
+    <a href="#" *ngIf="isLogged" class="btn btn-dark" routerLink="/newskill">Agregar </a>
+    <h2 id="title"><b>Hard&Soft skills</b></h2>
 
-            <td *ngIf="isLogged">
-              <button class ="btn btn-danger" (click)="deleteSkill(skill.id)">
-                  <i class="bi bi-trash-fill"></i> </button></td>
-</div>
-</div>
+    <div class="col-xs-12 col-4 text-center" *ngFor="let skill of skill">
+      
+      <circle-progress [percent]="(skill.porcentaje)" [radius]="80" [showUnits]="false" [showBackground]="true"
+        [backgroundColor]="'#E1BEE7'" [showTitle]="true" [showSubtitle]="true" [subtitle]="(skill.subtitle)"
+        [subtitleColor]="'black'" [title]="(skill.nombre)" [titleColor]="'black'" [titleFontSize]="'40'"
+        [outerStrokeWidth]="10" [innerStrokeWidth]="6" [outerStrokeColor]="'#D81B60'" [innerStrokeColor]="'#FF80AB'"
+        [animation]="true" [animationDuration]="500"></circle-progress>
+      
+        <a *ngIf="isLogged">
+        <button class="btn btn-light" routerLink="/editskill/{{skill.id}}">
+          <i class="bi bi-pen-fill"></i></button>
+        </a>
+
+      <a *ngIf="isLogged">
+        <button class="btn btn-danger" (click)="deleteSkill(skill.id)">
+          <i class="bi bi-trash-fill"></i> </button>
+        </a>
+
+    </div>
+  </section>
+</body>
+
+</html>

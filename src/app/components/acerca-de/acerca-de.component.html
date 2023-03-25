@@ -1,26 +1,27 @@
-<div class="container-fluid">
-    <div class = "row align-items-center">
-     <div class="col-lg-1">
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="container-fluid">
+<section class = "row align-items-center">
+    
          <button type="button" class="btn btn-light" routerLink="/editacercade/1" *ngIf="isLogged">
              Editar
-          </button>
-        
-     </div>  
-      
-        <div class="col-4">
-            <img src={{persona.img}} class="img-responsive" id="fotoperfil">
+          </button>  
+  
+        <div class="col-sm-4">
+            <img src={{persona.img}} class="img-fluid" id="fotoperfil">
 
-      <h3 id="nombre">{{persona.nombre}} {{persona.apellido}}</h3>
-      <h4>Full Stack Developer Jr</h4>
+      <h1 id="nombre">{{persona.nombre}} {{persona.apellido}}</h1>
+      <h2>Full Stack Developer Jr</h2>
       </div>
-      <div class="col-1"></div>
 
-      <div class="col-6">
+      <div class="col-sm-8" id="acercaDe">
         <span>
-        <h1><b>Acerca de mí</b></h1>
+        <h2 id="acerca"><b>Acerca de mí</b></h2>
         <p>{{persona.acercaDe}}</p>
         </span>
       </div>
-      <div class="col-1"></div>
-    </div>
-</div>
+
+  </section>
+</body>
+</html>

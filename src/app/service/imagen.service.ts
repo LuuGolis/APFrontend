@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Storage, ref, uploadBytes, list, getDownloadURL } from '@angular/fire/storage'
+import { Storage, ref, uploadBytes, list, getDownloadURL,
+getStorage, deleteObject } from '@angular/fire/storage'
 
 
 @Injectable({
@@ -13,6 +14,7 @@ nombre: string= "";
   constructor(private storage:Storage) { }
 
   public uploadImage($event: any, name:string){
+    
     //captura img y guarda en array
     const file = $event.target.files[0]
     //carpeta img en firebase storage
@@ -24,23 +26,27 @@ nombre: string= "";
 
   }
 
-  getImage(){
-    
+  getImage(){  
     const imageRef = ref(this.storage, 'img')
    
     list(imageRef).then(async response => {
-      for(let item of response.items){
-        
+      for(let item of response.items){       
         this.url = await getDownloadURL(item);
+        console.log(item.name);
+        
         if(this.nombre == item.name){
           this.urlImg = this.url;
         }
+
         console.log("la url es:" + this.url);
     }
     }).catch(error => console.log(error))
   }
 
-  deleteImg(img:string):void{}
+  deleteImg():void{
+  const imgRef = ref(this.storage, 'img/');
+  
+  }
 
   clearUrl(){
     this.url = "";

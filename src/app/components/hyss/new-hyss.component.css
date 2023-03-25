@@ -1,11 +1,15 @@
-form{
-    padding-top: 100px;
-    
+form {
+    padding-top: 1rem;
+
+}
+h1{
+    padding-top: 1rem;
+}
+button {
+    margin-top: 10px;
+    margin-left: 50px;
 }
 
-button{
-    margin-top: 20px;
-}
 .gradient-custom {
     /* fallback for old browsers */
     background: #6a11cb;

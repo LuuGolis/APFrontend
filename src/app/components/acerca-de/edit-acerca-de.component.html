@@ -1,33 +1,35 @@
 <section class="vh-100 gradient-custom">
-<div class="container" *ngIf="persona">
-    <div class="row">
-        <div>
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre de la institución</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre"[(ngModel)]="persona.nombre" name="nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="apellido">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido"[(ngModel)]="persona.apellido" name="apellido" required>
-                </div>
-                <div class="form-group">
-                    <label for="acercaDe">Descripción</label>
-                    <input type="text" class="form-control" id="acercaDe" name="acercaDe"[(ngModel)]="persona.acercaDe" name="acercaDe" required>
-                </div>
-                <div class="form-group">
-                    <label for="img">Imagen</label>
-                    <input type="file" class="form-control" id="img" name="img"[(ngModel)]="persona.img" name="img" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png">
-                </div>
-                <div class="Imagen">
-                    <img [src]="imagenS.url" alt="imagen de perfil" width="200px"
-                    *ngIf="imagenS.url !=''">
-                </div>
-                <button class="btn btn-primary">
-                    Editar
-                </button>
-            </form>
+    <div class="container" *ngIf="persona">
+        <div class="row">
+            <h1 class="text-center"><b>Editar acerca de</b></h1>
+                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                    <div class="form-group px-5">
+                        <label for="nombre">Nombre de la institución</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="persona.nombre"
+                            name="nombre" required>
+                    </div>
+                    <div class="form-group px-5">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" class="form-control" id="apellido" name="apellido"
+                            [(ngModel)]="persona.apellido" name="apellido" required>
+                    </div>
+                    <div class="form-group px-5">
+                        <label for="acercaDe">Descripción</label>
+                        <input type="text" class="form-control" id="acercaDe" name="acercaDe"
+                            [(ngModel)]="persona.acercaDe" name="acercaDe" required>
+                    </div>
+                    <div class="form-group px-5">
+                        <label for="img">Imagen</label>
+                        <input type="file" class="form-control" id="img" name="img" [(ngModel)]="persona.img" name="img"
+                            (change)="uploadImage($event)" accept=".jpg, .jpeg, .png">
+                    </div>
+                    <div class="Imagen">
+                        <img [src]="imagenS.url" alt="imagen de perfil" width="200px" *ngIf="imagenS.url !=''">
+                    </div>
+                    <button class="btn btn-primary">
+                        Editar
+                    </button>
+                </form>
+            </div>
         </div>
-    </div>
-    </div>
 </section>

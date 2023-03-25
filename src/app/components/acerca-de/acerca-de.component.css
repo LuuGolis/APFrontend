@@ -1,35 +1,41 @@
-body{
-    background-color:#CE93D8  ;
-   padding: 2rem;
+body {
+    background-color: #CE93D8;
+    padding: 2rem;
 }
-#acerca{
+
+#acerca {
     border-bottom: whitesmoke solid 3px;
     border-radius: 5%;
 }
-#acercaDe{
+
+#acercaDe {
     padding-left: 4rem;
     padding-right: 4rem;
 }
-div{
-    background-color: #CE93D8 ;
+
+div {
+    background-color: #CE93D8;
     text-align: center;
 }
-span{
+
+span {
     margin-top: 90px;
 }
+
 /*etiqueta nombre*/
-#nombre{
+#nombre {
     font-weight: bold;
     margin-top: 5%;
     margin-left: 10px;
 }
-#fotoperfil{
+
+#fotoperfil {
     position: relative;
-    width:200px;
+    width: 200px;
     height: 200px;
     border-radius: 100%;
     box-shadow: 3px 3px 3px white;
     border-style: solid;
     border-color: white;
-   
+
 }

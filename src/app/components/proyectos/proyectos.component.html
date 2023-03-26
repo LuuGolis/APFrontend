@@ -6,9 +6,9 @@
         <a href="#" *ngIf="isLogged" class="btn btn-dark" routerLink="/newproyecto">Agregar </a>
         <h2 id="titulo"> <b>Proyectos</b></h2>
 
-        <article class="col d-flex justify-content-around" *ngFor="let Proyecto of proyecto">
+        <article class="col-xs-12 col-md-4 d-flex justify-content-around" *ngFor="let Proyecto of proyecto">
 
-                <div class="card">
+                <div class="card" style="width: 20rem;">
                     <div class="card-body">
                         <h3 class="card-title"><b>{{Proyecto.nombreP}}</b></h3>
                         <p class="card-text">{{Proyecto.descripcionP}} <br>

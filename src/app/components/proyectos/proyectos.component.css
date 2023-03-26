@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #CE93D8;
     padding-bottom: 2rem;
     padding-left: 5rem;
@@ -18,7 +18,7 @@ div {
     background-color: #FCE4EC;
 }
 
-#titulo{
+#titulo {
     border-style: solid;
     border-color: whitesmoke;
     border-width: 50px, 50px;
@@ -44,4 +44,11 @@ div {
     background-color: #F8BBD0;
     text-align: center;
     border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
 }

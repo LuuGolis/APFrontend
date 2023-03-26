@@ -5,7 +5,7 @@ section {
     border-width: 50px, 50px;
     border-radius: 2%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
+
 }
 
 body {
@@ -26,7 +26,18 @@ body {
     padding-bottom: 10px;
 }
 
-ul{
+ul {
     padding-left: 3rem;
     padding-right: 3rem;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    ul {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }

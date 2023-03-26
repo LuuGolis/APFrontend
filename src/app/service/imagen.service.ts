@@ -44,7 +44,6 @@ nombre: string= "";
   }
 
   deleteImg():void{
-  const imgRef = ref(this.storage, 'img/');
   
   }
 

@@ -11,7 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ProyectoSService {
-  URL = environment.URL + 'proyecto/';
+  //URL = environment.URL + 'proyecto/';
+  URL = 'https://beglap.onrender.com/' + 'proyecto/';
 
   //urlImg: string = "";
   url: string = "";
